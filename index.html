@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SettleUp — Debt Settlement Optimizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>SettleUp</h1>
+    <p class="tagline">Split smarter. Settle in fewer transactions.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- SECTION 1: People -->
+    <section class="card" id="people-section">
+      <h2>1. Add People</h2>
+      <form id="people-form" class="inline-form">
+        <input type="text" id="person-name" placeholder="Enter name" required />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="people-list" class="chip-list"></ul>
+    </section>
+
+    <!-- SECTION 2: Expenses -->
+    <section class="card" id="expense-section">
+      <h2>2. Log an Expense</h2>
+      <form id="expense-form" class="expense-form">
+        <input type="text" id="expense-desc" placeholder="What was it for? (e.g. Dinner)" required />
+        <input type="number" id="expense-amount" placeholder="Amount (₹)" min="0" step="0.01" required />
+
+        <label class="field-label">Paid by</label>
+        <select id="expense-payer" required></select>
+
+        <label class="field-label">Split between</label>
+        <div id="split-checkboxes" class="checkbox-group"></div>
+
+        <button type="submit">Add Expense</button>
+      </form>
+
+      <h3>Expense History</h3>
+      <ul id="expense-list" class="expense-list"></ul>
+    </section>
+
+    <!-- SECTION 3: Balances + Settlement -->
+    <section class="card" id="settlement-section">
+      <h2>3. Balances & Settlement</h2>
+      <div id="balances-list" class="balances-list"></div>
+
+      <button id="settle-btn" type="button">Settle Up</button>
+
+      <div id="settlement-result" class="settlement-result"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
