@@ -490,3 +490,38 @@ button:hover {
   font-size: 0.85rem;
   font-style: italic;
 }
+@media (max-width: 768px) {
+  #landing-page {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+  }
+
+  .landing-left {
+    padding: 0;
+  }
+
+  .landing-big-text h1 {
+    font-size: 4rem;
+  }
+
+  .landing-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .landing-right {
+    display: none;
+  }
+
+  .register-right {
+    padding: 2rem 1.5rem;
+  }
+
+  .register-left {
+    display: none;
+  }
+}
+
