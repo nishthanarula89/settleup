@@ -3,7 +3,11 @@ let expenses = [];      // array of { id, description, amount, paidBy, splitBetw
 
 let nextExpenseId = 1;
 
-
+const landingpage = document.getElementById('landing-page');
+const registerpage= document.getElementById('register-page');
+const apppage= document.getElementById('app-page');
+const registerform = document.getElementById('register-form');
+const getstartedbtn= document.getElementById('get-started-btn');
 const peopleForm = document.getElementById('people-form');
 const personNameInput = document.getElementById('person-name');
 const peopleList = document.getElementById('people-list');
@@ -19,6 +23,17 @@ const balancesList = document.getElementById('balances-list');
 const settleBtn = document.getElementById('settle-btn');
 const settlementResult = document.getElementById('settlement-result');
 
+
+getstartedbtn.addEventListener('click', () => {
+  landingpage.classList.remove('active');
+  registerpage.classList.add('active');
+});
+
+registerform.addEventListener('submit', (e) => {
+  e.preventDefault();
+  registerpage.classList.remove('active');
+  apppage.classList.add('active');
+});
 
 
 function renderPeople() {
