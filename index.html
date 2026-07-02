@@ -4,16 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SettleUp — Debt Settlement Optimizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<section id="landing-page" class="page active">
+  <div class="landing-left">
+    <span class="landing-label">SettleUp</span>
+    <div class="landing-big-text">
+      <h1 class="faded">SPLIT</h1>
+      <h1 class="gradient">SETTLE</h1>
+      <h1 class="faded">DONE.</h1>
+    </div>
+    <div class="landing-bottom">
+      <p>Minimum transactions.<br/>Maximum clarity.</p>
+      <button type="button" id="get-started-btn">GET STARTED →</button>
+    </div>
+  </div>
+  <div class="landing-right">
+    <div class="expense-card" style="transform:rotate(1.5deg)">
+      <div>
+        <p class="card-title">🍕 Dinner</p>
+        <p class="card-meta">Paid by Nishtha · split 4 ways</p>
+      </div>
+      <span class="card-amount purple">₹1,200</span>
+    </div>
+    <div class="expense-card" style="transform:rotate(-1deg)">
+      <div>
+        <p class="card-title">🚕 Cab home</p>
+        <p class="card-meta">Paid by Parth · split 3 ways</p>
+      </div>
+      <span class="card-amount blue">₹670</span>
+    </div>
+    <div class="expense-card" style="transform:rotate(-0.5deg)">
+      <div>
+        <p class="card-title">🎬 Movie night</p>
+        <p class="card-meta">Paid by Sunanda · split 4 ways</p>
+      </div>
+      <span class="card-amount purple">₹870</span>
+    </div>
+    <div class="expense-card" style="transform:rotate(1deg)">
+      <div>
+        <p class="card-title">🍺 Drinks</p>
+        <p class="card-meta">Paid by Vishal · split 4 ways</p>
+      </div>
+      <span class="card-amount blue">₹2100</span>
+    </div>
+    <div class="expense-card highlight" style="transform:rotate(0.5deg)">
+      <div>
+        <p class="card-title accent">✦ Settled in 2 transactions</p>
+        <p class="card-meta accent-dim">Instead of 10 individual payments</p>
+      </div>
+      <span class="card-amount green">Done ✓</span>
+    </div>
+  </div>
+</section>
 
+
+<section id="register-page" class="page">
+  <div class="register-left">
+    <h1>SettleUp</h1>
+    <p>Split smarter.</p>
+    <p>Settle in fewer transactions.</p>
+  </div>
+  <div class="register-right">
+    <h2>Create Your Account</h2>
+    <form id="register-form">
+      <input type="text" id="register-name" placeholder="Full Name" required/>
+      <input type="email" id="register-email" placeholder="Email" required/>
+      <input type="password" id="register-password" placeholder="Password" required/>
+      <input type="file" id="register-photo" accept="image/*"/>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</section>
+
+
+<section id="app-page" class="page">
   <header class="app-header">
     <h1>SettleUp</h1>
     <p class="tagline">Split smarter. Settle in fewer transactions.</p>
+    
   </header>
-
-  <main class="container">
+   <main class="container">
 
     <!-- SECTION 1: People -->
     <section class="card" id="people-section">
@@ -24,12 +97,11 @@
       </form>
       <ul id="people-list" class="chip-list"></ul>
     </section>
-
-    <!-- SECTION 2: Expenses -->
+     <!-- SECTION 2: Expenses -->
     <section class="card" id="expense-section">
       <h2>2. Log an Expense</h2>
       <form id="expense-form" class="expense-form">
-        <input type="text" id="expense-desc" placeholder="What was it for? (e.g. Dinner)" required />
+        <input type="text" id="expense-desc" placeholder="What was it for? (e.g. Dinner/Shopping etc.)" required />
         <input type="number" id="expense-amount" placeholder="Amount (₹)" min="0" step="0.01" required />
 
         <label class="field-label">Paid by</label>
@@ -40,7 +112,7 @@
 
         <button type="submit">Add Expense</button>
       </form>
-
+      
       <h3>Expense History</h3>
       <ul id="expense-list" class="expense-list"></ul>
     </section>
@@ -56,6 +128,9 @@
     </section>
 
   </main>
+
+
+</section>
 
   <script src="script.js"></script>
 </body>
