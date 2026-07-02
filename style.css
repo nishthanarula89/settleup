@@ -23,7 +23,8 @@ body {
   background: #08080f;
   color: var(--text);
   line-height: 1.5;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -33,7 +34,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -52,7 +53,7 @@ body {
 #landing-page {
   display: flex;
   align-items: center;
-  height: 100vh;
+  min-height: 100dvh;
   background: #08080f;
   overflow: hidden;
 }
@@ -177,7 +178,7 @@ body {
 /* ============ REGISTER PAGE ============ */
 #register-page {
   display: flex;
-  height: 100vh;
+  min-height: 100dvh;
 }
 
 .register-left {
@@ -491,37 +492,94 @@ button:hover {
   font-style: italic;
 }
 @media (max-width: 768px) {
-  #landing-page {
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-    overflow-y: auto;
+  body{
+    overflow-x:hidden;
+    overflow-y:auto;
   }
 
-  .landing-left {
-    padding: 0;
+  .page{
+    position:relative;
+    min-height:100dvh;
+    height:auto;
   }
 
-  .landing-big-text h1 {
-    font-size: 4rem;
+  #landing-page{
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100dvh;
+    padding:2rem 1.25rem;
+    overflow-y:auto;
   }
 
-  .landing-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .landing-left{
+    width:100%;
+    padding:0;
   }
 
-  .landing-right {
-    display: none;
+  .landing-big-text h1{
+    font-size:3.2rem;
+    line-height:1;
   }
 
-  .register-right {
-    padding: 2rem 1.5rem;
+  .landing-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1rem;
   }
 
-  .register-left {
-    display: none;
+  .landing-bottom button{
+    width:100%;
+  }
+
+  .landing-right{
+    display:none;
+  }
+
+  #register-page{
+    flex-direction:column;
+    min-height:100dvh;
+  }
+
+  .register-left{
+    display:none;
+  }
+
+  .register-right{
+    width:100%;
+    padding:2rem 1.25rem;
+  }
+
+  .app-header{
+    padding:2rem 1rem 1rem;
+  }
+
+  .app-header h1{
+    font-size:2.4rem;
+  }
+
+  .container{
+    padding:0 1rem 2rem;
+  }
+
+  .inline-form,
+  .expense-list li,
+  .balance-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+
+  .inline-form button,
+  button{
+    width:100%;
+  }
+
+  .checkbox-group{
+    flex-direction:column;
+    gap:.6rem;
   }
 }
+
+
 
